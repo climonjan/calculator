@@ -4,8 +4,6 @@
 
 int main()
 {
-    setlocale(LC_ALL, "ru");
-
     Solver s;
     s.Run();
 

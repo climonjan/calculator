@@ -64,7 +64,7 @@ std::string Solver::ConvertBase(std::string numStr, int baseSrc, int baseDst)
 
 void Solver::Arithmetic()
 {
-    std::cout << "\nВыберите операцию:\n1 - сложение\n2 - вычитание\n3 - деление\n4 - умножение\n";
+    std::cout << "\nSelect an operation:\n1 - addition\n2 - subtraction\n3 - division\n4 - multiplication\n";
     std::cin >> n;
 
     switch (n)
@@ -86,7 +86,7 @@ void Solver::Arithmetic()
         std::cout << "b = "; std::cin >> b;
 
         if (b == 0)
-            std::cout << "Ошибка! Деление на нуль\n";
+            std::cout << "Error! Division by zero\n";
         else
             std::cout << a << " / " << b << " = " << Division(a, b) << std::endl;
 
@@ -99,23 +99,23 @@ void Solver::Arithmetic()
         break;
 
     default:
-        std::cout << "Неправильный ввод!\n";
+        std::cout << "Wrong input!\n";
         break;
     }
 }
 
 void Solver::Trigonometry()
 {
-    std::cout << "\nВыберите операцию: \n1 - sin(x)\n2 - cos(x)\n3 - tg(x)\n4 - ctg(x)\n";
+    std::cout << "\nSelect an operation: \n1 - sin(x)\n2 - cos(x)\n3 - tg(x)\n4 - ctg(x)\n";
     std::cin >> n;
 
     if (n < 1 || n > 4)
     {
-        std::cout << "Неправильный ввод!\n";
+        std::cout << "Wrong input!\n";
         return;
     }
 
-    std::cout << "Введите число х (в радианах): ";
+    std::cout << "Enter the number x (in radians): ";
     std::cin >> w;
 
     switch (n)
@@ -137,28 +137,28 @@ void Solver::Trigonometry()
         break;
 
     default:
-        std::cout << "Неправильный ввод!\n";
+        std::cout << "Wrong input!\n";
         break;
     }
 }
 
 void Solver::Bitwise()
 {
-    std::cout << "\nВыберите операцию: \n1 - побитовое И\n2 - побитовое ИЛИ\n";
+    std::cout << "\nSelect an operation: \n1 - bitwise AND\n2 - bitwise OR\n";
     std::cin >> n;
 
     if (n < 1 || n > 2)
     {
-        std::cout << "Неправильный ввод!\n";
+        std::cout << "Wrong input!\n";
         return;
     }
 
-    std::cout << "Введите 2 числа через пробел: ";
+    std::cout << "Enter 2 numbers separated by a space: ";
     std::cin >> x >> y;
 
     if ((x != 0) && (x != 1) || (y != 0) && (y != 1))
     {
-        std::cout << "Неверный ввод чисел!" << std::endl;
+        std::cout << "Wrong input!" << std::endl;
         return;
     }
 
@@ -166,16 +166,16 @@ void Solver::Bitwise()
     {
     case 1:
         rez = x & y;
-        std::cout << "побитовое И = " << rez << std::endl;
+        std::cout << "bitwise AND = " << rez << std::endl;
         break;
 
     case 2:
         rez = x | y;
-        std::cout << "побитовое ИЛИ = " << rez << std::endl;
+        std::cout << "bitwise OR = " << rez << std::endl;
         break;
 
     default:
-        std::cout << "Неправильный ввод!\n";
+        std::cout << "Wrong input!\n";
         break;
     }
 }
@@ -184,11 +184,11 @@ void Solver::Run()
 {
     while (f)
     {
-        std::cout << "\nВыберите операцию:\n1 - арифметические действия\n2 - тригонометрические вычисления";
-        std::cout << "\n3 - побитовые логические вычисления\n4 - степень числа\n5 - факториал\n6 - натуральный логарифм";
-        std::cout << "\n7 - НОК и НОД 2 чисел\n8 - конвертация системы счисления";
-        std::cout << "\n9 - площадь правильного n-угольника\n10 - решение квадратного уравнения";
-        std::cout << "\n11 - сгенерировать число в диапозоне\n12 - Решение СЛАУ методом прогонки\n13 - выход из программы\nВаш выбор: ";
+        std::cout << "\nSelect an operation:\n1 - arithmetic operations\n2 - trigonometric calculations";
+        std::cout << "\n3 - bitwise logic calculations\n4 - number degree\n5 - factorial\n6 - natural logarithm";
+        std::cout << "\n7 - NOC and NOD of 2 numbers\n8 - number system conversion";
+        std::cout << "\n9 - area of a regular n-gon\n10 - quadratic equation solution";
+        std::cout << "\n11 - generate a number in a range\n12 - Solving SLAU by the run method\n13 - programme exit\nYour choice: ";
         std::cin >> choice;
 
         switch (choice)
@@ -212,11 +212,11 @@ void Solver::Run()
             break;
 
         case 5:
-            std::cout << "Введите число N: "; std::cin >> n;
+            std::cout << "Enter a number N: "; std::cin >> n;
 
             if (n < 0)
             {
-                std::cout << "Неправильный ввод!\n";
+                std::cout << "Wrong input!\n";
                 break;
             }
 
@@ -224,87 +224,87 @@ void Solver::Run()
             break;
 
         case 6:
-            std::cout << "Введите число аргумент логарифма w: "; std::cin >> w;
+            std::cout << "Enter the number argument of the logarithm w: "; std::cin >> w;
             std::cout << "log(w) = " << log(w) << std::endl;
             break;
 
         case 7:
-            std::cout << "НОД и НОК чисел (x, y)\nx = "; std::cin >> x;
+            std::cout << "NOD and NOK of numbers (x, y)\nx = "; std::cin >> x;
             std::cout << "y = "; std::cin >> y;
-            std::cout << "НОД = " << NOD(x, y) << ", НОК = " << NOK(x, y) << std::endl;
+            std::cout << "NOD = " << NOD(x, y) << ", NOK = " << NOK(x, y) << std::endl;
             break;
 
         case 8:
-            std::cout << "Введите число: "; std::cin >> num_str;
-            std::cout << "Введите основание числа (2, 8, 10, 16): "; std::cin >> base_src;
+            std::cout << "Enter a number: "; std::cin >> num_str;
+            std::cout << "Enter the base of the number (2, 8, 10, 16): "; std::cin >> base_src;
 
             if ((base_src != 2) && (base_src != 8) && (base_src != 10) && (base_src != 16))
             {
-                std::cout << "Неправильный ввод!\n";
+                std::cout << "Wrong input!\n";
                 break;
             }
 
-            std::cout << "Введите желаемое основание числа (2, 8, 10, 16): "; std::cin >> base_dst;
+            std::cout << "Enter the desired base of the number (2, 8, 10, 16): "; std::cin >> base_dst;
 
             if ((base_dst != 2) && (base_dst != 8) && (base_dst != 10) && (base_dst != 16))
             {
-                std::cout << "Неправильный ввод!\n";
+                std::cout << "Wrong input!\n";
                 break;
             }
 
-            std::cout << "результат: " << ConvertBase(num_str, base_src, base_dst) << std::endl;
+            std::cout << "result: " << ConvertBase(num_str, base_src, base_dst) << std::endl;
             break;
 
         case 9:
-            std::cout << "Введите кол-во сторон правильного n-угольника: "; std::cin >> n;
+            std::cout << "Enter the number of sides of a regular n-gon: "; std::cin >> n;
 
             if (n < 3)
             {
-                std::cout << "Неправильный ввод!\n";
+                std::cout << "Wrong input!\n";
                 break;
             }
 
-            std::cout << "Введите длину стороны правильного n-угольника: "; std::cin >> length;
+            std::cout << "Enter the side length of a regular n-angle: "; std::cin >> length;
 
             if (length <= 0)
             {
-                std::cout << "Неправильный ввод!\n";
+                std::cout << "Wrong input!\n";
                 break;
             }
 
             perimeter = n * length;
             apothem = length / (2 * tan(M_PI / n));
-            std::cout << "Площадь правильного " << n << "-угольника = " << 0.5 * perimeter * apothem << std::endl;
+            std::cout << "The area of the right " << n << "-angle = " << 0.5 * perimeter * apothem << std::endl;
             break;
 
         case 10:
-            std::cout << "Квадратное уравнение имеет вид: ax^2 + bx + c = 0\nВведите коэффиценты:\na = "; std::cin >> a;
+            std::cout << "The quadratic equation has the form: ax^2 + bx + c = 0\nEnter the coefficients:\na = "; std::cin >> a;
             std::cout << "\nb = "; std::cin >> b; std::cout << "\nc = "; std::cin >> w; std::cout << std::endl;
 
             d = b * b - 4 * a * w;
 
             if (d < 0)
-                std::cout << "Корней нет!\n";
+                std::cout << "There are no roots!\n";
 
             if (d == 0)
-                std::cout << "1 решение: x = " << -b / (2 * a) << std::endl;
+                std::cout << "1 solution: x = " << -b / (2 * a) << std::endl;
 
             if (d > 0)
-                std::cout << "2 решения:\nx1 = " << (-b + sqrt(d)) / (2 * a) << "\nx2 = " << (-b - sqrt(d)) / (2 * a) << std::endl;
+                std::cout << "2 solutions:\nx1 = " << (-b + sqrt(d)) / (2 * a) << "\nx2 = " << (-b - sqrt(d)) / (2 * a) << std::endl;
 
             break;
 
         case 11:
-            std::cout << "Cлучайное число в диапозоне [x, y]\nВведите нижнюю границу диапозона = "; std::cin >> x;
-            std::cout << "Введите верхнюю границу диапозона = "; std::cin >> y;
+            std::cout << "Random number in the range [x, y]\nEnter the lower limit of the range = "; std::cin >> x;
+            std::cout << "Enter the upper limit of the range = "; std::cin >> y;
 
             if (y - x < 0)
             {
-                std::cout << "Неправильный ввод!\n";
+                std::cout << "Wrong input!\n";
                 break;
             }
 
-            std::cout << "Cлучайное число в диапозоне [" << x << ", " << y << "] = " << (rand() % (y - x + 1)) + x << std::endl;
+            std::cout << "Random number in the range [" << x << ", " << y << "] = " << (rand() % (y - x + 1)) + x << std::endl;
             break;
 
         case 12:
@@ -315,7 +315,7 @@ void Solver::Run()
             exit(0);
 
         default:
-            std::cout << "Неправильный ввод!\n";
+            std::cout << "Wrong input!\n";
             break;
         }
     }

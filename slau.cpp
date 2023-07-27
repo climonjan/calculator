@@ -49,13 +49,13 @@ void SLAU::SolveLinearEquations(std::vector<std::vector<double>> A, std::vector<
 
 void SLAU::DecisionSLAU()
 {
-    std::cout << "Введите размер матрицы A: ";
+    std::cout << "Enter the size of the matrix A: ";
     std::cin >> l;
 
     a.resize(l, std::vector<double>(l, 0));
     b.resize(l, 0);
 
-    std::cout << "Введите эл-ты матрицы A: " << std::endl;
+    std::cout << "Enter the elements of matrix A: " << std::endl;
 
     for (int i = 0; i < l; i++)
     {
@@ -67,11 +67,11 @@ void SLAU::DecisionSLAU()
 
     if (!IsSquareMatrix(a))
     {
-        std::cout << "Ошибка: матрица не квадратная" << std::endl;
+        std::cout << "Error: the matrix is not square" << std::endl;
         return;
     }
 
-    std::cout << "Введите эл-ты вектора b: " << std::endl;
+    std::cout << "Enter the elements of vector b: " << std::endl;
 
     for (int i = 0; i < l; i++)
     {
@@ -84,14 +84,14 @@ void SLAU::DecisionSLAU()
     {
         if (a[i].size() != n)
         {
-            std::cout << "Ошибка: матрица не квадратная" << std::endl;
+            std::cout << "Error: the matrix is not square" << std::endl;
             return;
         }
     }
 
     if (b.size() != n)
     {
-        std::cout << "ошибка: вектор b имеет некорректный размер" << std::endl;
+        std::cout << "error: vector b has incorrect size" << std::endl;
         return;
     }
 
@@ -99,11 +99,11 @@ void SLAU::DecisionSLAU()
 
     if (x.empty())
     {
-        std::cout << "Ошибка: СЛАУ не имеет решения" << std::endl;
+        std::cout << "Error: SLAU has no solution" << std::endl;
     }
     else
     {
-        std::cout << "Решение введенной СЛАУ: ";
+        std::cout << "Solution of the introduced SLAU: ";
 
         for (int i = 0; i < l; i++)
         {
